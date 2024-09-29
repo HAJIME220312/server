@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メインページ</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100vw;
+            height: 100vh;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #f5f5f5; /* 背景と同じ色に変更 */
+            text-align: center;
+            font-size: 10px;
+        }
+
+        tr:first-child td,
+        tr:nth-child(3) td,
+        tr:last-child td {
+            height: 1vh;
+        }
+
+        tr:nth-child(2) td {
+            height: 8vh;
+        }
+
+        tr:nth-child(4) td {
+            height: 45vh;
+        }
+
+        td:first-child,
+        td:nth-child(3),
+        td:nth-child(5),
+        td:last-child {
+            width: 2vw;
+            font-size: 0;
+        }
+
+        td:nth-child(2),
+        td:nth-child(4),
+        td:nth-child(6) {
+            width: 15vw;
+        }
+
+        /* セルの背景を白にする */
+        #time-cell,
+        #note-cell,
+        #password-cell,
+        #cell-4-6 {
+            background-color: #ffffff;
+        }
+
+        #time-cell {
+            padding-left: 5px;
+        }
+
+        .note-title, .password-title, .date, .time, .todo-title {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .note-body, .todo-body {
+            font-size: 12px;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .password-input {
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;
+            const date = now.getDate();
+            const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
+            const day = dayNames[now.getDay()];
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const dateString = `${year}年<br>${month}月${date}日（${day}）`;
+            const timeString = `${hours}:${minutes}:${seconds}`;
+
+            document.querySelector('.date').innerHTML = dateString;
+            document.querySelector('.time').innerHTML = timeString;
+        }
+
+        function setPassword() {
+            // 表示ボタンを消す
+            document.querySelector('.password-input').innerHTML = "xctsw2zP2Z!"; // パスワードを表示
+        }
+
+        window.onload = function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="time-cell">
+                <div class="date"></div>
+                <div class="time"></div>
+            </td>
+            <td></td>
+            <td id="note-cell">
+                <div class="note-title">メモ</div>
+                <div class="note-body">
+                    ・千賀先生に部屋を借りる<br>
+                    ・井ノ岡先生に本を返す
+                </div>
+            </td>
+            <td></td>
+            <td id="password-cell">
+                <div class="password-title">共通パスワード</div>
+                <div class="password-input">
+                    <button onclick="setPassword()">表示</button> <!-- 入力フィールドを削除し、表示ボタンのみに -->
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <!-- Google カレンダーを埋め込み -->
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FTokyo&bgcolor=%23ffffff&mode=WEEK&showTitle=0&src=ODY5NzMyNDg1OGNjMTcxZGZjODA3MTczMDY4NTFmY2EzYTZkODAyN2Q2MjJkOWQwZGQ2OGNkZjA3YzEwYmRmMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y2RhYmE3MjhkODI3ZDA4MzFiMTY4MTJkYjhjZTU2YjdmYWYxZWRiMGZiZDU0ODZmNzQyNWQ3NWYxY2RkYWEwZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NmVhNTcxMTllYWJjOGM0ZTBiYTUzNzZhMGE0MDYxZTlmYjM2ZmI0MWVmYjRlNGYzMzZhN2RkMzBlNDU5ZmU2MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=N2E1YTFlNDc4ZjkxMjA5OGU5YzBkMWZhNTc4NDAyMTA2NDU2MjRjODVjMTc3OTgzMmUwOTVkYzUzNzgwMDIwM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MjE4YThmZjdjY2NlNjdkMzc0ODVmMmQyYzMzZmYxOTIwMWQyYTUxZjc4YmRjNjE1NDMyMTRlNTEwZTc2ODdkOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGE3ZmE3MDRjMTZhZTAzZmRiMTlmYzgzN2QxYzA5ZjM3NWVhZGVlNGMzYmRiYzM0YzBjOTEzMGJmYWIwMzQ2YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MWFmYWE1ZWRiMjE5YzRhOTI3ZGQ4NWE0MTE4N2Y4Zjc2YjAwZDQ0YjQ2MTE0MzFkNTE4N2YzNGI4NGJlZTc5NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MGVlNjFiYWJmMmJkMDE3ODVlNzFhZjYyYTc0OWIxZjRiMTdhOTg4YTFjNTdkNDQ3YjE0ZjQ3Yjc3NGY3YWU2OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZjdiNzA3ZjNlZTc2YjZhY2MwZTlkMDc2Y2EyZWQ1ZDc5NGQyMzgzOTM4MDk4MjFlNzQ3ZWExOWRiOWMzNTcxYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ODA2MGRhNmNlMmFjNmJlMmE0NjYzNzI4MTRhY2M4Y2MzZDBlYmNkN2Y0MGE4MTc1ZTFjOWZmMDlhMDE1NzM2M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NjRhMmJlMmEwNTNlOTllMjI2NmNlNjg5MzNjZjBjZTgyNDI3ZTg1MjEzMzhiOGY4OGM1OTQ5NTFhMTgxMDg3NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NzhmOWExZWMyY2EyZGM1YTkwODdmMDM0M2NjYmU0Zjg3NTlkMzQzZGNlZjRmY2Y2ZjA4MjZiNjIxMmNhY2UzM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%238E24AA&color=%23D81B60&color=%234285F4&color=%23009688&color=%23E4C441&color=%23C0CA33&color=%23795548&color=%239E69AF&color=%23A79B8E&color=%23F6BF26&color=%23E67C73&color=%23F09300&color=%230B8043" style="border:solid 1px #777" width="850" height="600" frameborder="0" scrolling="no"></iframe>
+            </td>
+            <td></td>
+            <td id="cell-4-6">
+                <div class="todo-title">ToDoリスト</div>
+                <div class="todo-body">
+                    ・９日（月）茶道部<br>
+                    ・１０日（火）英演単語<br>
+                    ・１０日（火）鉄研<br>
+                    ・１０日（火）茶道部<br>
+                    ・１１日（水）礼拝<br>
+                    ・１１日（水）数ｃａｎ<br>
+　　　　　
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

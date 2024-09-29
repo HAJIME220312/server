@@ -74,6 +74,7 @@
         .search-container {
             display: flex;
             align-items: center;
+            position: relative;
         }
 
         .search-bar {
@@ -100,6 +101,28 @@
             background-color: #ddd;
         }
 
+        /* 予測候補リストのスタイル */
+        .suggestions {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-top: none;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .suggestions div:hover {
+            background-color: #f0f0f0;
+        }
+
         /* iframeのスタイルを追加 */
         iframe {
             width: 100%;
@@ -122,8 +145,9 @@
         </div>
         <div>はじめサーバー</div>
         <div class="search-container">
-            <input type="text" class="search-bar" placeholder="検索...">
+            <input type="text" class="search-bar" placeholder="検索..." id="search-bar">
             <button class="search-button">検索</button>
+            <div class="suggestions" id="suggestions"></div>
         </div>
     </header>
 
@@ -137,8 +161,15 @@
         const menu = document.getElementById('menu');
         const overlay = document.getElementById('overlay');
         const searchButton = document.querySelector('.search-button');
-        const searchBar = document.querySelector('.search-bar');
+        const searchBar = document.getElementById('search-bar');
+        const suggestions = document.getElementById('suggestions');
         const iframe = document.getElementById('content-frame');
+
+        // 予測候補のデータリスト
+        const suggestionData = [
+            "福田優花子", "藤原悠衣", "中村玲亜", "中村心優", 
+            "中村美夏乃", "眞造恵実", "人物データベース", "メイン"
+        ];
 
         // メニュー表示のためのコード
         menuButton.addEventListener('click', function(e) {
@@ -155,7 +186,34 @@
         // 検索機能のためのコード
         searchButton.addEventListener('click', function() {
             const query = searchBar.value.trim().toLowerCase();
+            search(query);
+        });
 
+        // 予測機能
+        searchBar.addEventListener('input', function() {
+            const query = searchBar.value.toLowerCase();
+            suggestions.innerHTML = ''; // 予測候補をリセット
+
+            if (query) {
+                const filteredSuggestions = suggestionData.filter(item => 
+                    item.toLowerCase().includes(query)
+                );
+
+                filteredSuggestions.forEach(suggestion => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.textContent = suggestion;
+                    suggestionDiv.addEventListener('click', function() {
+                        searchBar.value = suggestion; // クリックした予測候補を入力に反映
+                        suggestions.innerHTML = ''; // 予測候補を消す
+                        search(suggestion.toLowerCase());
+                    });
+                    suggestions.appendChild(suggestionDiv);
+                });
+            }
+        });
+
+        // 検索実行の関数
+        function search(query) {
             if (query === "福田優花子") {
                 iframe.src = "https://hajime220312.github.io/server/people/j209福田優花子/";
             } else if (query === "藤原悠衣") {
@@ -175,7 +233,7 @@
             } else {
                 alert("指定されたページは見つかりませんでした。");
             }
-        });
+        }
     </script>
 </body>
 </html>

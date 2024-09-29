@@ -14,7 +14,7 @@
             padding-left: 10px;
         }
         table {
-            width: 50%;
+            width: 90%; /* 両サイドとの間隔を縮める */
             margin: 20px auto;
             border-collapse: collapse;
         }
@@ -23,7 +23,15 @@
         }
         th, td {
             padding: 10px;
-            text-align: center;
+            text-align: left;
+            position: relative;
+            height: 150px; /* 1列目の高さの3倍に設定 */
+        }
+        td small {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-size: 10px; /* 名前を小さく表示 */
         }
     </style>
 </head>
@@ -41,17 +49,66 @@
             </tr>
         </thead>
         <tbody>
-            <!-- 10行の空白行を作成 -->
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr>
+                <td><small>名前1</small></td>
+                <td><small>名前2</small></td>
+                <td><small>名前3</small></td>
+                <td><small>名前4</small></td>
+            </tr>
+            <tr>
+                <td><small>名前5</small></td>
+                <td><small>名前6</small></td>
+                <td><small>名前7</small></td>
+                <td><small>名前8</small></td>
+            </tr>
+            <tr>
+                <td><small>名前9</small></td>
+                <td><small>名前10</small></td>
+                <td><small>名前11</small></td>
+                <td><small>名前12</small></td>
+            </tr>
+            <tr>
+                <td><small>名前13</small></td>
+                <td><small>名前14</small></td>
+                <td><small>名前15</small></td>
+                <td><small>名前16</small></td>
+            </tr>
+            <tr>
+                <td><small>名前17</small></td>
+                <td><small>名前18</small></td>
+                <td><small>名前19</small></td>
+                <td><small>名前20</small></td>
+            </tr>
+            <tr>
+                <td><small>名前21</small></td>
+                <td><small>名前22</small></td>
+                <td><small>名前23</small></td>
+                <td><small>名前24</small></td>
+            </tr>
+            <tr>
+                <td><small>名前25</small></td>
+                <td><small>名前26</small></td>
+                <td><small>名前27</small></td>
+                <td><small>名前28</small></td>
+            </tr>
+            <tr>
+                <td><small>名前29</small></td>
+                <td><small>名前30</small></td>
+                <td><small>名前31</small></td>
+                <td><small>名前32</small></td>
+            </tr>
+            <tr>
+                <td><small>名前33</small></td>
+                <td><small>名前34</small></td>
+                <td><small>名前35</small></td>
+                <td><small>名前36</small></td>
+            </tr>
+            <tr>
+                <td><small>名前37</small></td>
+                <td><small>名前38</small></td>
+                <td><small>名前39</small></td>
+                <td><small>名前40</small></td>
+            </tr>
         </tbody>
     </table>
 

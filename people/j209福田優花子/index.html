@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福田優花子</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* 白い背景色 */
+        }
+        .container {
+            display: flex;
+            height: 100vh; /* ビューポートの高さに合わせる */
+        }
+        .left {
+            flex: 1; /* 左側の部分の比率 */
+            background-color: #ffffff; /* 左側の背景色を白に */
+            padding: 20px;
+            box-sizing: border-box; /* パディングを含めたボックスサイズを適用 */
+            border-right: 2px solid black; /* 左右の境界に黒い線を追加 */
+        }
+        .right {
+            flex: 4; /* 右側の部分の比率 */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333333; /* テキストの色 */
+        }
+        .person-info {
+            margin-bottom: 20px; /* 下に余白 */
+        }
+        .person-info img {
+            width: 100%; /* 写真を最大幅にする */
+            height: auto; /* 比率を保って高さを自動調整 */
+        }
+        .person-info div {
+            margin-bottom: 10px;
+        }
+        .content h2 {
+            margin-top: 20px;
+            font-size: 20px;
+            border-bottom: 1px solid #333; /* タイトルの下に線を引く */
+            padding-bottom: 5px;
+        }
+        .content p {
+            margin-top: 10px;
+            line-height: 1.6; /* 行間を調整 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="person-info">
+                <a href="https://gyazo.com/9066b383983aeb88904873c5f74cd7ed">
+                    <img src="https://i.gyazo.com/9066b383983aeb88904873c5f74cd7ed.jpg" alt="Image from Gyazo" width="250"/>
+                </a> <!-- 写真を挿入する部分 -->
+                <div><strong>名前:</strong> 福田優花子</div>
+                <div><strong>性別:</strong> メス</div>
+                <div><strong>番号:</strong> j209</div>
+                <div><strong>期間:</strong> 2022年 - 現在</div>
+                <div><strong>備考:</strong> テストデータです。</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <h1>福田優花子</h1> <!-- 名前を見出しとして表示 -->
+                <h2>概要</h2>
+                <p>山田 太郎は、日本のデータベースに登録された人物です。2020年から関係を持ち、現在も継続しています。</p>
+
+                <h2>職業</h2>
+                <p>山田 太郎はソフトウェアエンジニアとして働いています。彼は主にWeb開発を専門とし、最新技術を活用して多くのプロジェクトに貢献しています。</p>
+
+                <h2>趣味</h2>
+                <p>彼の趣味は読書とプログラミングです。特に、技術書や小説を読むことが好きで、新しいプログラミング言語を学ぶことにも熱心です。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

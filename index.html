@@ -168,7 +168,12 @@
         // 予測候補のデータリスト
         const suggestionData = [
             "福田優花子", "藤原悠衣", "中村玲亜", "中村心優", 
-            "中村美夏乃", "眞造恵実", "人物データベース", "メイン"
+            "中村美夏乃", "眞造恵実", "人物データベース", "メイン", 
+            "ChatGPT", "Copilot", "Duolingo", "GitHub", "Gmail", "GoogleCalendar", 
+            "GoogleClassroom", "GoogleDrive", "GoogleGemini", "GoogleMap", "GoogleMeet", 
+            "Googleスプレッドシート", "Googleスライド", "Googleドキュメント", "Googleフォト", 
+            "Googleフォーム", "Google検索", "Google翻訳", "KOBE交通案内", "Try-it", 
+            "Youtube", "ジョルダン", "スタサプ", "青空文庫", "神姫バスナビ"
         ];
 
         // メニュー表示のためのコード
@@ -230,6 +235,56 @@
                 iframe.src = "https://hajime220312.github.io/server/people/";
             } else if (query === "メイン" || query === "main") {
                 iframe.src = "https://hajime220312.github.io/server/main/";
+            } else if (query === "chatgpt") {
+                iframe.src = "https://hajime220312.github.io/server/app/ChatGPT";
+            } else if (query === "copilot") {
+                iframe.src = "https://hajime220312.github.io/server/app/Copilot";
+            } else if (query === "duolingo") {
+                iframe.src = "https://hajime220312.github.io/server/app/Duolingo";
+            } else if (query === "github") {
+                iframe.src = "https://hajime220312.github.io/server/app/GitHub";
+            } else if (query === "gmail") {
+                iframe.src = "https://hajime220312.github.io/server/app/Gmail";
+            } else if (query === "googlecalendar") {
+                iframe.src = "https://hajime220312.github.io/server/app/GoogleCalendar";
+            } else if (query === "googleclassroom") {
+                iframe.src = "https://hajime220312.github.io/server/app/GoogleClassroom";
+            } else if (query === "googledrive") {
+                iframe.src = "https://hajime220312.github.io/server/app/GoogleDrive";
+            } else if (query === "googlegemini") {
+                iframe.src = "https://hajime220312.github.io/server/app/GoogleGemini";
+            } else if (query === "googlemap") {
+                iframe.src = "https://hajime220312.github.io/server/app/GoogleMap";
+            } else if (query === "googlemeet") {
+                iframe.src = "https://hajime220312.github.io/server/app/GoogleMeet";
+            } else if (query === "googlesプレッドシート") {
+                iframe.src = "https://hajime220312.github.io/server/app/Googleスプレッドシート";
+            } else if (query === "googlesスライド") {
+                iframe.src = "https://hajime220312.github.io/server/app/Googleスライド";
+            } else if (query === "googledキュメント") {
+                iframe.src = "https://hajime220312.github.io/server/app/Googleドキュメント";
+            } else if (query === "googleフォト") {
+                iframe.src = "https://hajime220312.github.io/server/app/Googleフォト";
+            } else if (query === "googleフォーム") {
+                iframe.src = "https://hajime220312.github.io/server/app/Googleフォーム";
+            } else if (query === "google検索") {
+                iframe.src = "https://hajime220312.github.io/server/app/Google検索";
+            } else if (query === "google翻訳") {
+                iframe.src = "https://hajime220312.github.io/server/app/Google翻訳";
+            } else if (query === "kobe交通案内") {
+                iframe.src = "https://hajime220312.github.io/server/app/KOBE交通案内";
+            } else if (query === "try-it") {
+                iframe.src = "https://hajime220312.github.io/server/app/Try-it";
+            } else if (query === "youtube") {
+                iframe.src = "https://hajime220312.github.io/server/app/Youtube";
+            } else if (query === "ジョルダン") {
+                iframe.src = "https://hajime220312.github.io/server/app/ジョルダン";
+            } else if (query === "スタサプ") {
+                iframe.src = "https://hajime220312.github.io/server/app/スタサプ";
+            } else if (query === "青空文庫") {
+                iframe.src = "https://hajime220312.github.io/server/app/青空文庫";
+            } else if (query === "神姫バスナビ") {
+                iframe.src = "https://hajime220312.github.io/server/app/神姫バスナビ";
             } else {
                 alert("指定されたページは見つかりませんでした。");
             }
